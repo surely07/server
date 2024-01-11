@@ -1,9 +1,11 @@
 const express = require("express");
 const axios = require("axios");
-const fs = require("fs").promises;
+const cors = require("cors");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
+app.use(cors());
 
 app.get("/", async (req, res) => {
   try {
@@ -11,20 +13,11 @@ app.get("/", async (req, res) => {
       "https://api.steampowered.com/ISteamApps/GetAppList/v2"
     );
 
-    // 현재 db.json 데이터 읽기
-    const currentData = await fs.readFile("db.json", "utf-8");
-    const jsonData = JSON.parse(currentData);
-
-    // db.json에 업데이트
-    jsonData.apps = data.apps;
-    await fs.writeFile("db.json", JSON.stringify(jsonData, null, 2));
-
-    res.json(jsonData);
+    res.json(data);
   } catch (error) {
-    console.error("api 호출 중 오류: ", error);
-    res.status(500).send("서버 에러");
+    console.error("Error calling Steam API: ", error);
+    res.status(500).send("Server error");
   }
-  //   res.send("Hello World!");
 });
 
 app.listen(port, () => {

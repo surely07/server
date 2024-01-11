@@ -3,7 +3,7 @@ const axios = require("axios");
 const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 app.use(cors());
 
@@ -14,8 +14,9 @@ app.get("/", async (req, res) => {
     );
 
     res.json(data);
+    console.log(data);
   } catch (error) {
-    console.error("Error calling Steam API: ", error);
+    console.error("Steam API 에러: ", error);
     res.status(500).send("Server error");
   }
 });

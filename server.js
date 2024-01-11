@@ -1,11 +1,32 @@
-// server.js
-const jsonServer = require("json-server");
-const server = jsonServer.create();
-const router = jsonServer.router("db.json");
-const middlewares = jsonServer.defaults();
+const express = require("express");
+const axios = require("axios");
+const fs = require("fs").promises;
 
-server.use(middlewares);
-server.use(router);
-server.listen(3000, () => {
-  console.log("JSON Server is running");
+const app = express();
+const port = 3000;
+
+app.get("/", async (req, res) => {
+  try {
+    const { data } = await axios.get(
+      "https://api.steampowered.com/ISteamApps/GetAppList/v2"
+    );
+
+    // 현재 db.json 데이터 읽기
+    const currentData = await fs.readFile("db.json", "utf-8");
+    const jsonData = JSON.parse(currentData);
+
+    // db.json에 업데이트
+    jsonData.apps = data.apps;
+    await fs.writeFile("db.json", JSON.stringify(jsonData, null, 2));
+
+    res.json(jsonData);
+  } catch (error) {
+    console.error("api 호출 중 오류: ", error);
+    res.status(500).send("서버 에러");
+  }
+  //   res.send("Hello World!");
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
 });

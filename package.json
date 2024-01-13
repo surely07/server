@@ -14,5 +14,8 @@
     "start": "node server.js"
   },
   "repository": "https://github.com/surely07/server.git",
-  "author": "Kwon Bora <sweetpt88@gmail.com>"
+  "author": "Kwon Bora <sweetpt88@gmail.com>",
+  "engines": {
+    "node": "20.10.0"
+  }
 }

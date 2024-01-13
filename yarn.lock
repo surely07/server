@@ -383,9 +383,9 @@ finalhandler@1.2.0:
     unpipe "~1.0.0"
 
 follow-redirects@^1.14.0:
-  version "1.15.4"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.4.tgz#cdc7d308bf6493126b17ea2191ea0ccf3e535adf"
-  integrity sha512-Cr4D/5wlrb0z9dgERpUL3LrmPKVDsETIJhaCMeDfuFYcqa5bldGV6wBsAN6X/vxlXQtFBMrXdXxdL8CbDTGniw==
+  version "1.15.5"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.5.tgz#54d4d6d062c0fa7d9d17feb008461550e3ba8020"
+  integrity sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==
 
 forwarded@0.2.0:
   version "0.2.0"
@@ -528,9 +528,9 @@ is-number@^7.0.0:
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
 json-server@^1.0.0-alpha.17:
-  version "1.0.0-alpha.17"
-  resolved "https://registry.yarnpkg.com/json-server/-/json-server-1.0.0-alpha.17.tgz#ae5f9e9146c4326fa55ed170f5fb13dd51c824fd"
-  integrity sha512-fPuzQOdat5tBr7LzNCSJeit1tdp9awnI5pmbhYZm6jhTcSey7m+v5NGRvQ1kl5kdJIyVvGuQZDeJg5v6liQKxA==
+  version "1.0.0-alpha.20"
+  resolved "https://registry.yarnpkg.com/json-server/-/json-server-1.0.0-alpha.20.tgz#a233cdb168b6d1e817607c780579950d140f886e"
+  integrity sha512-8ZKrY7xGcZXlL4nDGS73iNxxDp/HBTP5WY7gHs1jozuXYvoHsoVROb6HOpRi42H0TfN7atjNcFVhiIFjKIRK9A==
   dependencies:
     "@tinyhttp/app" "^2.2.3"
     "@tinyhttp/cors" "^2.0.0"
